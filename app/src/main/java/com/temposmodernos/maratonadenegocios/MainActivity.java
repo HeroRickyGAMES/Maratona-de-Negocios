@@ -1,5 +1,7 @@
 package com.temposmodernos.maratonadenegocios;
 
+//Programado por HeroRickyGames
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;

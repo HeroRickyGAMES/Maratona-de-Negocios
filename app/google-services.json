@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330182416479",
+    "project_id": "maratona-de-negocios",
+    "storage_bucket": "maratona-de-negocios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330182416479:android:d35e47ba04fc9b07e123ea",
+        "android_client_info": {
+          "package_name": "com.temposmodernos.maratonadenegocios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330182416479-04s1oihedrbvvlg1o5837jviip8kefih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZMPGybPS3LRDTYgtmarBzEdYdHQPTfyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330182416479-04s1oihedrbvvlg1o5837jviip8kefih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

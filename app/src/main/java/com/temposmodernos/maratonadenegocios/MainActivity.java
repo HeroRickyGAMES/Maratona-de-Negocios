@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     public void EnviarRelatorio(View view){
 
         //referencias
-
         String nomedb = nome.getText().toString();
         String idadedb = idade.getText().toString();
         String CEPdb = CEP.getText().toString();

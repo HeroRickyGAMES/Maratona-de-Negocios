@@ -6,10 +6,12 @@ package com.temposmodernos.maratonadenegocios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText idade;
     private EditText CEP;
     private EditText opiniao;
-    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference("Pessoa1");
+    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference("Formularios");
+
+    //Data base
+    private FirebaseDatabase database;
+    private ValueEventListener valueEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,22 +39,32 @@ public class MainActivity extends AppCompatActivity {
         opiniao = findViewById(R.id.editOpiniao);
 
         //classe
-        EnviarRelatorio();
+
+
+
+        //db
+        database = FirebaseDatabase.getInstance();
     }
 
-    public void EnviarRelatorio(){
+    public void EnviarRelatorio(View view){
 
         //referencias
-        nome.getText();
+        //nome.getText();
         idade.getText();
         CEP.getText();
         opiniao.getText();
 
+        String nomedb = nome.getText().toString();
+        String idadedb = idade.getText().toString();
+        String CEPdb = CEP.getText().toString();
+        String opiniaodb = opiniao.getText().toString();
+
         //Enviar pra o DB
-        referencia.child("pessoa").setValue(nome);
-        referencia.child("pessoa").setValue(idade);
-        referencia.child("pessoa").setValue(CEP);
-        referencia.child("pessoa").setValue(opiniao);
+        referencia.child(nomedb).child("nome").setValue(nomedb);
+        referencia.child(nomedb).child("idade").setValue(idadedb);
+        referencia.child(nomedb).child("cep").setValue(CEPdb);
+        referencia.child(nomedb).child("opiniao").setValue(opiniaodb);
+
 
     }
 }

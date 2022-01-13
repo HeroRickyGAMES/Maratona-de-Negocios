@@ -1,13 +1,23 @@
 package com.temposmodernos.maratonadenegocios;
 
 //Programado por HeroRickyGames
-//Desenvolvido com varias queimas de categorias pensando em codigo
+
+//Desenvolvido com vários dias de programação e queima de caloria pensando em corrigir bugs!
+
+//Se você está aqui é porque quer aprender como eu programei, enfim tentei resumir um pouco como que eu fiz esse codigo!
+
+//Espero que aprendam bastante com esse app!
+
+//O app é totalmente de codigo aberto!
+
+//Os codigos aqui podem ser reutilizados em outros apps como base para criação de outros projetos!
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
         CEP = findViewById(R.id.editCEP);
         opiniao = findViewById(R.id.editOpiniao);
 
-        //classe
-
-
-
         //db
         database = FirebaseDatabase.getInstance();
     }
@@ -59,7 +65,15 @@ public class MainActivity extends AppCompatActivity {
         referencia.child(nomedb).child("idade").setValue(idadedb);
         referencia.child(nomedb).child("cep").setValue(CEPdb);
         referencia.child(nomedb).child("opiniao").setValue(opiniaodb);
+        
+        //e se os campos estiverem vazios?
+        if(nomedb.isEmpty() || idadedb.isEmpty() || CEPdb.isEmpty() || opiniaodb.isEmpty()){
 
+            //Toast para notificação se está vazio
+            Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+       
+        }
 
     }
+
 }
